@@ -8,35 +8,32 @@ import java.util.ArrayList;
 /**
  * Created by Nicolas Zozol on 04/10/2016.
  */
-public class GenerationThreshold implements IGenerationThreshold{
+public class GenerationThreshold implements IGenerationThreshold {
 
+	public GenerationThreshold() {
 
-    public GenerationThreshold(int size) {
+	}
 
+	@Override
+	public int getSmallNumber() {
+		return 0;
+	}
 
-
-    }
-
-
-    @Override
-    public int getSmallNumber() {
-        return 0;
-    }
-
-    @Override
-    public int getBigNumber() {
-        return 0;
-    }
-
-    @Override
-    public int findSmallestNumberOfPeopleRequiredToHave50() {
-        return 0;
-    }
-
+	@Override
+	public int getBigNumber() {
+		return 0;
+	}
 
 	@Override
 	public float calculateProbabilityOfSame(int size) {
-		// TODO Auto-generated method stub
+		Generation generation = new Generation(10000, size);
+		
+		return generation.getNumberOfCollectionsThatHasTwoPeopleWithSameBirthday() / 10000;
+	}
+
+	@Override
+	public int findSmallestNumberOfPeopleRequiredToHave50() {
 		return 0;
 	}
+
 }
